@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'token-id') {
+                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'pass') {
                     sh '''cd backend
                     mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=new -Dsonar.projectName='new' -Dsonar.host.url=http://13.38.106.157:9000 -Dsonar.token=sqp_61ba86410ff5c3c661021dcb611e5e69a57d5604'''
                 }
