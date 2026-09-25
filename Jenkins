@@ -21,7 +21,7 @@ pipeline {
                  mvn  org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                    -Dsonar.projectKey=test \
                    -Dsonar.projectName='test' \
-                   -Dsonar.host.url=http://http://13.38.106.157:9000/
+                   -Dsonar.host.url=http://13.38.106.157:9000/
                    -Dsonar.token=sqp_fa78183988037809b09b068c4306d225fc999d83                 '''
                    '''
                 }
