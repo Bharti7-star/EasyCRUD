@@ -24,6 +24,16 @@ pipeline {
                 }
             }
         }
+        stage('Quality-Gate') {
+            steps {
+                timeout(10) {
+                    waitForQualityGate abortPipeline: true, credentialsId: 'pass'
+       } 
+    }
+} 
+
+
+
         stage('Deploy') {
             steps {
                 echo 'Deploy success'
