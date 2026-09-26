@@ -1,4 +1,4 @@
-# MariaDB Setup and Configuration Guide for Windows
+# MariaDB Setup and Configuration Guide for Windows.
 
 This guide explains how to set up MariaDB, create a database, and Create Database User
 testing webhook
