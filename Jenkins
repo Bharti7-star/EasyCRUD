@@ -29,7 +29,16 @@ pipeline {
                 }
             }
         }
- stage('Deploy') {
+
+stage('Quality-Gate') {
+            steps {
+                timeout(10) {
+                    waitForQualityGate abortPipeline: true, credentialsId: 'sonar-id'
+                }
+            }
+        }
+
+stage('Deploy') {
             steps {
                 echo 'Deploy success'
             }
