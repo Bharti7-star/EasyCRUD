@@ -33,7 +33,7 @@ pipeline {
 stage('Quality-Gate') {
             steps {
                 timeout(10) {
-                    waitForQualityGate abortPipeline: true, credentialsId: 'msg'
+                    waitForQualityGate abortPipeline: true, credentialsId: 'token-id'
                 }
             }
         }
