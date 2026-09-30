@@ -12,7 +12,7 @@ pipeline {
                 sh '''
                 cd backend
                   docker build -t backend .
-                  docker run -d -p 80:80 backend:latest
+                  docker run -d -p 8081:8080 backend:latest
                    '''
  }
 }
@@ -21,7 +21,7 @@ pipeline {
                 sh '''
                 cd frontend
                   docker build -t frontend .
-                  docker run -d -p 8080:8080 frontend:latest
+                  docker run -d -p 8000:80 frontend:latest
                    '''
  }
 }
