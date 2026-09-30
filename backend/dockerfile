@@ -2,6 +2,6 @@ FROM  maven:3.9.6-eclipse-temurin-21
 COPY  . /opt
 WORKDIR  /opt
 RUN   mvn clean package -DskipTests
-EXPOSE 8080
+EXPOSE 80
 WORKDIR /opt/target
 CMD ["java", "-jar", "stuent-registration-baceknd-0.0.1-SNAPSHOT.jar"]
