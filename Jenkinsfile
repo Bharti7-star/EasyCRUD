@@ -12,7 +12,7 @@ pipeline {
                 sh '''
                 cd backend
                   docker build -t backend .
-                  docker run -d -p 8080:8080 backend:latest
+                  docker run -d -p 80:80 backend:latest
                    '''
  }
 }
