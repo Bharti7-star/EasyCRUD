@@ -35,7 +35,6 @@ pipeline {
             steps {
                 sh '''
                 cd frontend
-                 --network app-network \
                   docker build -t frontend .
                   docker run -d --network app-network -p 8000:80 frontend:latest
                    '''
