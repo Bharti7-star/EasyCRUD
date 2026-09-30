@@ -13,7 +13,7 @@ pipeline {
                 cd backend
                   docker build -t backend .
                   docker run -d -p 8080:8080 backend:latest
-               ...
+                   ...
  }
 }
         stage('Test') {
