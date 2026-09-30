@@ -7,14 +7,14 @@ pipeline {
                 git branch: 'main', credentialsId: 'token', url: 'https://github.com/Bharti7-star/EasyCRUD.git'
             }
         }
-        stage('Build') {
+        stage('Build backend') {
             steps {
                 sh '''
                 cd backend
-                 sh 'docker build -t backend .'
-                 sh 'docker run -d -p 8080:8080 backend:latest'
+                  'docker build -t backend .'
+                  'docker run -d -p 8080:8080 backend:latest'
                ...
-}
+ }
 }
         stage('Test') {
             steps {
