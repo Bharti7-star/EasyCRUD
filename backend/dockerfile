@@ -4,4 +4,4 @@ WORKDIR  /opt
 RUN   mvn clean package -DskipTests
 EXPOSE 80
 WORKDIR /opt/target
-CMD ["java", "-jar", "student-registration-baceknd-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "student-registration-backend-0.0.1-SNAPSHOT.jar"]
