@@ -16,7 +16,20 @@ pipeline {
                    '''
  }
 }
-        stage('Test') {
+       stage('Build frontend') {
+            steps {
+                sh '''
+                cd frotned
+                  docker build -t frontend .
+                  docker run -d -p 8000:8000 frontend:latest
+                   '''
+ }
+}
+        
+        
+        
+        
+ stage('Test') {
             steps {
               echo 'Test Completed'
                
