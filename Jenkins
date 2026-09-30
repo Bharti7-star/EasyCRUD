@@ -11,10 +11,11 @@ pipeline {
             steps {
                 sh '''
                 cd backend
-                mvn clean package -DskipTests
-               '''
-            }
-        }
+                 sh 'docker build -t backend .'
+                 sh 'docker run -d -p 8080:8080 backend:latest'
+               ...
+}
+}
         stage('Test') {
             steps {
               echo 'Test Completed'
