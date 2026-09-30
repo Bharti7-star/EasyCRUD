@@ -25,8 +25,9 @@ pipeline {
             steps {
                 sh '''
                 cd backend
-                  docker build -t backend .
-                  docker run -d -p 8081:8080 backend:latest
+                 docker build -t backend .
+                  docker run -d --network app-network -p 8081:8080 backend:latest
+                    
                    '''
  }
 }
@@ -34,8 +35,9 @@ pipeline {
             steps {
                 sh '''
                 cd frontend
+                 --network app-network \
                   docker build -t frontend .
-                  docker run -d -p 8000:80 frontend:latest
+                  docker run -d --network app-network -p 8000:80 frontend:latest
                    '''
  }
 }
