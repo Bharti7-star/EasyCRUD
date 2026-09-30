@@ -10,16 +10,15 @@ pipeline {
         stage('Create DB') {
             steps {
                 sh '''
-                docker run -d -e MYSQL_ROOT_PASSWORD=123 mariadb
-                docker exec -it container_id mariadb -uroot -p123
-                create database studentapp;
-                exit
-                '''
-            }
+                 docker run -d \
+              --name mysql-db \
+              --network app-network \
+              -e MARIADB_ROOT_PASSWORD=123 \
+              -e MARIADB_DATABASE=student_app \
+              mariadb:latest
+        '''
+    }
         }
-        
-        
-        
         stage('Build backend') {
             steps {
                 sh '''
