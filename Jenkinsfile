@@ -7,6 +7,19 @@ pipeline {
                 git branch: 'main', credentialsId: 'token', url: 'https://github.com/Bharti7-star/EasyCRUD.git' 
             }
         }
+        stage('Create DB') {
+            steps {
+                sh '''
+                docker run -d -e MYSQL_ROOT_PASSWORD=123 mariadb
+                docker exec -it container_id mariadb -uroot -p123
+                create database studentapp;
+                exit
+                '''
+            }
+        }
+        
+        
+        
         stage('Build backend') {
             steps {
                 sh '''
