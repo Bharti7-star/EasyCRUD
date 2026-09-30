@@ -21,7 +21,7 @@ pipeline {
                 sh '''
                 cd frontend
                   docker build -t frontend .
-                  docker run -d -p 8000:8000 frontend:latest
+                  docker run -d -p 8080:8080 frontend:latest
                    '''
  }
 }
