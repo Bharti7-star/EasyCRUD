@@ -19,7 +19,7 @@ pipeline {
        stage('Build frontend') {
             steps {
                 sh '''
-                cd frotned
+                cd frontend
                   docker build -t frontend .
                   docker run -d -p 8000:8000 frontend:latest
                    '''
