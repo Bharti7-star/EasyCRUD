@@ -10,7 +10,8 @@ pipeline {
         stage('Create DB') {
             steps {
                 sh '''
-                
+               docker network create app-network || true
+               docker rm -f mysql-db || true   
               docker run -d \
               --name mysql-db \
               --network app-network \
