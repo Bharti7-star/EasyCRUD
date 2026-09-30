@@ -10,7 +10,8 @@ pipeline {
         stage('Create DB') {
             steps {
                 sh '''
-                 docker run -d \
+                
+              --docker run -d \
               --name mysql-db \
               --network app-network \
               -e MARIADB_ROOT_PASSWORD=123 \
